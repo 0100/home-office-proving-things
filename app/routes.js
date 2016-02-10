@@ -10,10 +10,6 @@ router.get('/examples/template-data', function (req, res) {
   res.render('examples/template-data', { 'name' : 'Foo' });
 });
 
-router.get('/income-proving', function (req, res) {
-  res.render('income-proving', {'global_header_text' : 'Home Office'});
-});
-
 router.get('/income-proving/results', function (req, res) {
   var nino = req.param('nino');
   var fromDate = req.param('from-day')+"/"+req.param('from-month')+"/"+req.param('from-year');
