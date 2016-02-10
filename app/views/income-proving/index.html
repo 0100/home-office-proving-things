@@ -19,14 +19,33 @@
       </p>
     </div>
 
+  {% if errors_on %}
+  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+
+    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
+      There's some missing information
+    </h1>
+
+    <p>
+      Make sure all the fields have been completed including the to and from dates.
+    </p>
+
+    <ul class="error-summary-list">
+      <li><a href="#ni-number">National Insurance Number is missing</a></li>
+    </ul>
+
+  </div>
+  {% endif %}
+
     <!-- National Insurance number -->
-    <div class="form-group">
-      <label class="form-label-bold" for="ni-number">
+    <div class="form-group {% if errors_on %}error{% endif %}">
+      <label class="form-label-bold" for="ni-number" id="ni-number">
         National Insurance number
         <span class="form-hint">
           For example, 'VO 12 34 56 D'.
         </span>
-      </label>
+       {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a national insurance number</span>{% endif %}
+     </label>
       <input type="text" class="form-control" name="nino" id="nino">
     </div>
 
