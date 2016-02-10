@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Home Office - Income Proving
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <form action="/income-proving/results/" method="get" class="form">
+
+    <h1 class="form-title heading-large">
+      Individual details
+    </h1>
+
+    <div class="text">
+      <p class="lede">
+        Use this tool to query HMRC. It will provide the income of a person using their National Insurance Number.
+      </p>
+    </div>
+
+    <!-- National Insurance number -->
+    <div class="form-group">
+      <label class="form-label-bold" for="ni-number">
+        National Insurance number
+        <span class="form-hint">
+          For example, 'VO 12 34 56 D'.
+        </span>
+      </label>
+      <input type="text" class="form-control" name="nino" id="nino">
+    </div>
+
+    <!-- From date -->
+    <div class="form-group">
+      <fieldset>
+        <legend class="form-label-bold">From date</legend>
+
+        <div class="form-date">
+
+          <p class="form-hint">For example, 31 3 1980</p>
+
+          <div class="form-group form-group-day">
+            <label for="from-day">Day</label>
+            <input class="form-control" name="from-day" id="from-day" type="number" pattern="[0-9]*" min="0" max="31">
+          </div>
+
+          <div class="form-group form-group-month">
+            <label for="from-month">Month</label>
+            <input class="form-control" name="from-month" id="from-month" type="number" pattern="[0-9]*" min="0" max="12">
+          </div>
+
+          <div class="form-group form-group-year">
+            <label for="from-year">Year</label>
+            <input class="form-control" name="from-year" id="from-year" type="number" pattern="[0-9]*" min="0" max="2016">
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+    <!-- To date -->
+    <div class="form-group">
+      <fieldset>
+        <legend class="form-label-bold">To date</legend>
+
+        <div class="form-date">
+
+          <p class="form-hint">For example, 31 3 1980</p>
+
+          <div class="form-group form-group-day">
+            <label for="to-day">Day</label>
+            <input class="form-control" name="to-day" id="to-day" type="number" pattern="[0-9]*" min="0" max="31">
+          </div>
+
+          <div class="form-group form-group-month">
+            <label for="to-month">Month</label>
+            <input class="form-control" name="to-month" id="to-month" type="number" pattern="[0-9]*" min="0" max="12">
+          </div>
+
+          <div class="form-group form-group-year">
+            <label for="to-year">Year</label>
+            <input class="form-control" name="to-year" id="to-year" type="number" pattern="[0-9]*" min="0" max="2016">
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" class="button" value="Check income">
+    </div>
+
+  </form>
+
+</main>
+{% endblock %}
