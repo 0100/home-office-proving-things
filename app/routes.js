@@ -11,7 +11,7 @@ router.get('/examples/template-data', function (req, res) {
 });
 
 router.get('/income-proving', function (req, res) {
-  res.render('income-proving/results', {'global_header_text' : 'Home Office'});
+  res.render('income-proving', {'global_header_text' : 'Home Office'});
 });
 
 router.get('/income-proving/results', function (req, res) {
