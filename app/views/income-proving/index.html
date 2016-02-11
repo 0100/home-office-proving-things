@@ -34,6 +34,8 @@
 
     <ul class="error-summary-list">
       <li><a href="#ni-number">National Insurance Number is missing</a></li>
+      <li><a href="#from-date">From date is missing</a></li>
+      <li><a href="#to-date">To date is missing</a></li>
     </ul>
 
   </div>
@@ -52,13 +54,15 @@
     </div>
 
     <!-- From date -->
-    <div class="form-group">
+    <div class="form-group {% if errors_on %}error{% endif %}" id="from-date">
       <fieldset>
         <legend class="form-label-bold">From date</legend>
 
         <div class="form-date">
 
           <p class="form-hint">For example, 31 3 1980</p>
+
+          {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a from date</span>{% endif %}
 
           <div class="form-group form-group-day">
             <label for="from_day">Day</label>
@@ -80,13 +84,15 @@
     </div>
 
     <!-- To date -->
-    <div class="form-group">
+    <div class="form-group {% if errors_on %}error{% endif %}" id="to-date">
       <fieldset>
         <legend class="form-label-bold">To date</legend>
 
         <div class="form-date">
 
           <p class="form-hint">For example, 31 3 1980</p>
+
+          {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a to date</span>{% endif %}
 
           <div class="form-group form-group-day">
             <label for="to_day">Day</label>

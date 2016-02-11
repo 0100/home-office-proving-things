@@ -14,12 +14,15 @@ router.get('/income-proving', function (req, res) {
   res.render('income-proving/index', {'global_header_text' : 'Home Office', 'errors_on' : req.query.errors});
 });
 
-router.get('/income-proving/results', function (req, res) {
+router.get('/income-proving/results', function(req, res, next) {
   var nino = req.query.nino;
   var fromDate = req.query.from_day+"/"+req.query.from_month+"/"+req.query.from_year;
   var toDate = req.query.to_day+"/"+req.query.to_month+"/"+req.query.to_year;
 
-  res.render('income-proving/results', {'global_header_text' : 'Home Office', 'nino': nino, 'fromDate': fromDate, 'toDate': toDate});
+  if(nino){
+  	res.render('income-proving/results', {'global_header_text' : 'Home Office', 'nino': nino, 'fromDate': fromDate, 'toDate': toDate});
+  }
+  else res.redirect('/income-proving?errors=on');
 });
 
 // add your routes here
