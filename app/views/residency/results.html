@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Home Office - Income Proving
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+    <h1 class="form-title heading-large">
+      Individual income
+    </h1>
+
+    <h2 class="heading-medium">
+      Your search
+    </h2>
+
+<table>
+      <thead>
+        <tr>
+          <th scope="col">Individual</th>
+          <th scope="col">National Insurance Number</th>
+          <th scope="col">From date</th>
+          <th scope="col">To date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tom Jones</td>
+          <td>{{ nino|default('QQ 12 34 56 D') }}</td>
+          <td>{{ fromDate|default('02/01/2015') }}</td>
+          <td>{{ toDate|default('02/12/2015') }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="heading-medium">
+      Income details
+    </h2>
+
+   <table>
+    <thead>
+      <tr>
+        <th scope="col">Payment date</th>
+        <th scope="col">Employer</th>
+        <th class="numeric" scope="col">Gross income</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>02/01/2015</td>
+        <td>Flying Pizza Ltd</td>
+        <td class="numeric">£1,666</td>
+      </tr>
+      <tr>
+        <td>02/02/2015</td>
+        <td>Flying Pizza Ltd</td>
+        <td class="numeric">£1,666</td>
+      </tr>
+      <tr>
+        <td>02/03/2015</td>
+        <td>Flying Pizza Ltd</td>
+        <td class="numeric">£1,666</td>
+      </tr>
+      <tr>
+        <td>02/04/2015</td>
+        <td>Flying Pizza Ltd</td>
+        <td class="numeric">£1,666</td>
+      </tr>
+      <tr>
+        <td>02/05/2015</td>
+        <td>Flying Pizza Ltd</td>
+        <td class="numeric">£1,666</td>
+      </tr>
+      <tr>
+        <td>02/06/2015</td>
+        <td>Flying Pizza Ltd</td>
+        <td class="numeric">£1,666</td>
+      </tr>
+      <tr>
+        <td>02/07/2015</td>
+        <td>Flying Pizza Ltd</td>
+        <td class="numeric">£1,666</td>
+      </tr>
+      <tr>
+        <td>02/08/2015</td>
+        <td>Flying Pizza Ltd</td>
+        <td class="numeric">£1,666</td>
+      </tr>
+      <tr>
+        <td>02/09/2015</td>
+        <td>Flying Pizza Ltd</td>
+        <td class="numeric">£1,666</td>
+      </tr>
+      <tr>
+        <td>02/10/2015</td>
+        <td>Flying Pizza Ltd</td>
+        <td class="numeric">£1,666</td>
+      </tr>
+      <tr>
+        <td>02/11/2015</td>
+        <td>Flying Pizza Ltd</td>
+        <td class="numeric">£1,666</td>
+      </tr>
+      <tr>
+        <td>02/12/2015</td>
+        <td>Flying Pizza Ltd</td>
+        <td class="numeric">£1,666</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="col">Total</th>
+        <th scope="col"></th>
+        <th class="numeric" scope="col">£19,992</th>
+      </tr>
+    </tfoot>
+  </table>
+
+    <div class="form-group">
+      <a class="button" href="/income-proving/">Start a new search</a>
+    </div>
+
+</main>
+{% endblock %}

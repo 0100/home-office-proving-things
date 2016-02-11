@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Home Office - Income Proving
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+{% include "includes/phase_banner_alpha.html" %}
+
+  <form action="/income-proving/results/" method="get" class="form">
+
+    <h1 class="form-title heading-large">
+      Advanced Passenger Information
+    </h1>
+
+    <div class="text">
+      <p class="lede">
+        Search the Advanced Passenger Information (API) to determine a persons travel history.
+      </p>
+    </div>
+
+  {% if errors_on %}
+  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+
+    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
+      There's some missing information
+    </h1>
+
+    <p>
+      Make sure all the fields have been completed.
+    </p>
+
+    <ul class="error-summary-list">
+      <li><a href="#first-name">First name</a></li>
+      <li><a href="#from-date">Last name</a></li>
+      <li><a href="#to-date">Date of birth</a></li>
+    </ul>
+
+  </div>
+  {% endif %}
+
+    <h2 class="form-title heading-medium">Passenger name</h2>
+    <!-- National Insurance number -->
+    <div class="form-group {% if errors_on %}error{% endif %}">
+      <label class="form-label-bold" for="first-name" id="first-name">
+        First name
+       {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a first name</span>{% endif %}
+     </label>
+      <input type="text" class="form-control" name="firstname" id="firstname">
+    </div>
+
+    <div class="form-group {% if errors_on %}error{% endif %}">
+      <label class="form-label-bold" for="first-name" id="first-name">
+        Last name
+       {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a last name</span>{% endif %}
+     </label>
+      <input type="text" class="form-control" name="firstname" id="firstname">
+    </div>
+
+    <h2 class="form-title heading-medium">Passenger date of birth</h2>
+    <!-- From date -->
+    <div class="form-group {% if errors_on %}error{% endif %}" id="from-date">
+      <fieldset>
+
+        <div class="form-date">
+
+          <label class="form-label-bold" for="first-name" id="first-name">
+            Date of birth
+           {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a date of birth</span>{% endif %}
+         </label>
+
+          <p class="form-hint">For example, 31 3 1980</p>
+
+          <div class="form-group form-group-day">
+            <label for="from_day">Day</label>
+            <input class="form-control" name="from_day" id="from_day" type="number" pattern="[0-9]*" min="0" max="31">
+          </div>
+
+          <div class="form-group form-group-month">
+            <label for="from_month">Month</label>
+            <input class="form-control" name="from_month" id="from_month" type="number" pattern="[0-9]*" min="0" max="12">
+          </div>
+
+          <div class="form-group form-group-year">
+            <label for="from_year">Year</label>
+            <input class="form-control" name="from_year" id="from_year" type="number" pattern="[0-9]*" min="0" max="2016">
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <input type="submit" class="button" value="Search">
+    </div>
+
+  </form>
+
+</main>
+{% endblock %}

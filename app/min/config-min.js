@@ -1,1 +1,1 @@
-module.exports={serviceName:"Income Proving",port:"3000",useAuth:"false"};
+module.exports={serviceName:"Proving Things",port:"3000",useAuth:"false"};
