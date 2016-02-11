@@ -1,0 +1,1 @@
+module.exports={serviceName:"Income Proving",port:"3000",useAuth:"false"};
