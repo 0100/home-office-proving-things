@@ -23,7 +23,7 @@
       </thead>
       <tbody>
         <tr>
-          <td><a href="./record{{urlSearch}}">{{ firstName|default('Joe') }} {{ lastName|default('Bloggs') }}</a></td>
+          <td><a href="./record?firstname={{ firstName|default('Joe') }}&amp;lastname={{ lastName|default('Bloggs') }}">{{ firstName|default('Joe') }} {{ lastName|default('Bloggs') }}</a></td>
           <td>{{ dob|default('02/05/1988') }}</td>
           <td>Brazillian</td>
         </tr>
@@ -44,17 +44,17 @@
       </thead>
       <tbody>
         <tr>
-          <td><a href="./record{{urlSearch}}">Jo Bloggs</a></td>
+          <td><a href="./record?firstName={{ firstName|default('Joe') }}&amp;lastName={{ lastName|default('Bloggs') }}">Jo Bloggs</a></td>
           <td>{{ dob|default('02/05/1988') }}</td>
           <td>Brazillian</td>
         </tr>
         <tr>
-          <td><a href="./record{{urlSearch}}">Joe Blogs</a></td>
+          <td><a href="./record?firstName={{ firstName|default('Joe') }}&amp;lastName={{ lastName|default('Bloggs') }}">Joe Blogs</a></td>
           <td>{{ dob|default('02/05/1988') }}</td>
           <td>Brazillian</td>
         </tr>
         <tr>
-          <td><a href="./record{{urlSearch}}">Joe Blogg</a></td>
+          <td><a href="./record?firstName={{ firstName|default('Joe') }}&amp;lastName={{ lastName|default('Bloggs') }}">Joe Blogg</a></td>
           <td>{{ dob|default('02/05/1988') }}</td>
           <td>Brazillian</td>
         </tr>

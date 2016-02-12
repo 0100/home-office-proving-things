@@ -52,7 +52,10 @@ router.get('/residency/results', function(req, res, next) {
 });
 
 router.get('/residency/results/record', function (req, res) { 
-  res.render('residency/record', {'global_header_text' : 'Home Office'});
+  var firstName = req.query.firstname;
+  var lastName = req.query.lastname;
+  
+  res.render('residency/record', {'global_header_text' : 'Home Office', 'firstName': firstName, 'lastName': lastName});
 });
 
 module.exports = router;
