@@ -6,122 +6,60 @@
 
 {% block content %}
 
-<main id="content" role="main">
+<main id="content" role="main" class="{{ contentClass|default('default') }}">
   {% include "includes/phase_banner_alpha.html" %}
 
     <h1 class="form-title heading-large">
-      Individual income
+      Exact match results
     </h1>
 
-    <h2 class="heading-medium">
-      Your search
-    </h2>
-
-<table>
+    <table>
       <thead>
         <tr>
-          <th scope="col">Individual</th>
-          <th scope="col">National Insurance Number</th>
-          <th scope="col">From date</th>
-          <th scope="col">To date</th>
+          <th scope="col">Name</th>
+          <th scope="col">Date of Birth</th>
+          <th scope="col">Nationality</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Tom Jones</td>
-          <td>{{ nino|default('QQ 12 34 56 D') }}</td>
-          <td>{{ fromDate|default('02/01/2015') }}</td>
-          <td>{{ toDate|default('02/12/2015') }}</td>
+          <td><a href="./record{{urlSearch}}">{{ firstName|default('Joe') }} {{ lastName|default('Bloggs') }}</a></td>
+          <td>{{ dob|default('02/05/1988') }}</td>
+          <td>Brazillian</td>
         </tr>
       </tbody>
     </table>
 
-    <h2 class="heading-medium">
-      Income details
+    <h2 class="heading-large">
+      Similar matches
     </h2>
 
-   <table>
-    <thead>
-      <tr>
-        <th scope="col">Payment date</th>
-        <th scope="col">Employer</th>
-        <th class="numeric" scope="col">Gross income</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>02/01/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/02/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/03/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/04/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/05/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/06/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/07/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/08/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/09/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/10/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/11/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/12/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <th scope="col">Total</th>
-        <th scope="col"></th>
-        <th class="numeric" scope="col">£19,992</th>
-      </tr>
-    </tfoot>
-  </table>
-
-    <div class="form-group">
-      <a class="button" href="/income-proving/">Start a new search</a>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Date of Birth</th>
+          <th scope="col">Nationality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="./record{{urlSearch}}">Jo Bloggs</a></td>
+          <td>{{ dob|default('02/05/1988') }}</td>
+          <td>Brazillian</td>
+        </tr>
+        <tr>
+          <td><a href="./record{{urlSearch}}">Joe Blogs</a></td>
+          <td>{{ dob|default('02/05/1988') }}</td>
+          <td>Brazillian</td>
+        </tr>
+        <tr>
+          <td><a href="./record{{urlSearch}}">Joe Blogg</a></td>
+          <td>{{ dob|default('02/05/1988') }}</td>
+          <td>Brazillian</td>
+        </tr>
+      </tbody>
+    </table>
 
 </main>
 {% endblock %}

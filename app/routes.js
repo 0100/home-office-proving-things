@@ -5,6 +5,8 @@ router.get('/', function (req, res) {
   res.render('index', {'global_header_text' : 'Home Office'});
 });
 
+//INCOME PROVING***************************
+
 // Example route: Passing data into a page
 router.get('/examples/template-data', function (req, res) {
   res.render('examples/template-data', { 'name' : 'Foo' });
@@ -26,9 +28,31 @@ router.get('/income/results', function(req, res, next) {
 });
 
 // add your routes here
+
+//RESIDENCY *********************************
 router.get('/residency', function (req, res) {
   res.render('residency/index', {'global_header_text' : 'Home Office', 'errors_on' : req.query.errors});
 });
 
+router.get('/residency/results', function(req, res, next) {
+  var firstName = req.query.firstname;
+  var lastName = req.query.lastname;
+  var dob = req.query.dob_day+"/"+req.query.dob_month+"/"+req.query.dob_year;
+  var contentClass = false;
+
+  if(firstName == "Lionel"){
+    //james bond
+    contentClass = "lionel";
+  }
+
+  if(firstName && lastName && dob){
+    res.render('residency/results', {'global_header_text' : 'Home Office', 'firstName': firstName, 'lastName': lastName, 'dob': dob, contentClass: contentClass});
+  }
+  else res.redirect('/residency?errors=on');
+});
+
+router.get('/residency/results/record', function (req, res) { 
+  res.render('residency/record', {'global_header_text' : 'Home Office'});
+});
 
 module.exports = router;

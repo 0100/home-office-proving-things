@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Home Office - Income Proving
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+    <h1 class="form-title heading-large">
+      {{ firstName|default('Joe') }} {{ lastName|default('Bloggs') }}
+    </h1>
+
+    <div class="text">
+      <p class="lede">
+        Male, born {{ dob|default('02/01/1988') }} <br />
+        Brazillian nationality
+      </p>
+    </div>
+
+    <hr />
+
+    <h2 class="form-title heading-medium">
+      Associated documents
+    </h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Document #</th>
+          <th scope="col">Type</th>
+          <th scope="col">Issued</th>
+          <th scope="col" class="numeric">Expires</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="./document">77534BLOGG82650</a></td>
+          <td>Passport</td>
+          <td>Brazil</td>
+          <td class="numeric">10/12/2020</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="heading-medium">
+      Entry and exit information
+    </h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Entry/exit</th>
+          <th scope="col">Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>10/12/2020</td>
+          <td>Enters UK</td>
+          <td>Turkey</td>
+        </tr>
+        <tr>
+          <td>10/12/2020</td>
+          <td>Exits UK</td>
+          <td>Turkey</td>
+        </tr>
+        <tr>
+          <td>10/12/2020</td>
+          <td>Enters UK</td>
+          <td>Turkey</td>
+        </tr>
+        <tr>
+          <td>10/12/2020</td>
+          <td>Exits UK</td>
+          <td>Turkey</td>
+        </tr>
+        <tr>
+          <td>10/12/2020</td>
+          <td>Enters UK</td>
+          <td>Turkey</td>
+        </tr>
+        <tr>
+          <td>10/12/2020</td>
+          <td>Exits UK</td>
+          <td>Turkey</td>
+        </tr>
+      </tbody>
+    </table>
+
+</main>
+{% endblock %}
