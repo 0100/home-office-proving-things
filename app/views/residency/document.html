@@ -11,17 +11,27 @@
 
     <div class="breadcrumbs">
       <ol role="breadcrumbs">
-        <li><a href="#" onclick="history.back(-1)">Search</a></li>
-        <li><a href="#" onclick="history.back()">Results</a></li>
+        <li><a href="#" onclick="history.back(-2)">Search</a></li>
+        <li><a href="#" onclick="history.back(-1)">Results</a></li>
+        <li><a href="#" onclick="history.back()">Joe Bloggs</a></li>
       </ol>
     </div>
 
     <h1 class="form-title heading-large">
-      {{ firstName|default('Joe') }} {{ lastName|default('Bloggs') }}
+      77534BLOGG82650
     </h1>
-
     <div class="text">
       <p class="lede">
+        Passport issued in Brazil <br />
+        Expires 10/12/2022
+      </p>
+    </div>
+
+    <h2 class="form-title heading-medium">
+      {{ firstName|default('Joe') }} {{ lastName|default('Bloggs') }}
+    </h2>
+    <div class="text">
+      <p>
         Male, born {{ dob|default('02/01/1988') }} <br />
         Brazillian nationality
       </p>
@@ -29,43 +39,8 @@
 
     <hr />
 
-    <h2 class="form-title heading-medium">
-      Associated documents
-    </h2>
-
-    <table>
-      <thead>
-        <tr>
-          <th scope="col">Document #</th>
-          <th scope="col">Type</th>
-          <th scope="col">Issued</th>
-          <th scope="col" class="numeric">Expires</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="/residency/results/record/document/">77534BLOGG82650</a></td>
-          <td>Passport</td>
-          <td>Brazil</td>
-          <td class="numeric">10/12/2022</td>
-        </tr>
-        <tr>
-          <td><a href="/residency/results/record/document/">IT1552898346765</a></td>
-          <td>Identity Card</td>
-          <td>Italy</td>
-          <td class="numeric">10/11/2020</td>
-        </tr>
-        <tr>
-          <td><a href="/residency/results/record/document/">23442BLOGG123</a></td>
-          <td>Passport</td>
-          <td>Brazil</td>
-          <td class="numeric">10/12/2014</td>
-        </tr>
-      </tbody>
-    </table>
-
     <h2 class="heading-medium">
-      Entry and exit information
+      Document entry and exit history
     </h2>
     
     <table>
