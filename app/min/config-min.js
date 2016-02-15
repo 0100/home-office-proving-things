@@ -1,1 +1,0 @@
-module.exports={serviceName:"Proving Things Prototypes",port:"3000",useAuth:"false"};
