@@ -38,12 +38,8 @@ router.get('/residency/results', function(req, res, next) {
   var firstName = req.query.firstname;
   var lastName = req.query.lastname;
   var dob = req.query.dob_day+"/"+req.query.dob_month+"/"+req.query.dob_year;
-  var contentClass = false;
-
-  if(firstName == "Lionel"){
-    //james bond
-    contentClass = "lionel";
-  }
+  var nameClass = firstName+" "+lastName;
+  var contentClass = nameClass.toLowerCase();
 
   if(firstName && lastName && dob){
     res.render('residency/results', {'global_header_text' : 'Home Office', 'firstName': firstName, 'lastName': lastName, 'dob': dob, contentClass: contentClass});

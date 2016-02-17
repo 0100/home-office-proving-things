@@ -11,6 +11,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/assets\/images\/brent.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12494,
+		"inputAbbreviatedPath": "\/assets\/images\/brent.jpg",
+		"outputAbbreviatedPath": "\/assets\/images\/brent.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/images\/lionel.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -478,6 +489,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/config.js",
 		"outputAbbreviatedPath": "\/min\/config-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/min\/routes-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/routes-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/routes-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
