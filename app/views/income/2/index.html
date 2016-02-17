@@ -9,15 +9,15 @@
 
 {% include "includes/phase_banner_alpha.html" %}
 
-  <form action="/income/results/" method="get" class="form">
+  <form action="/income/2/results/" method="get" class="form">
 
     <h1 class="form-title heading-large">
-      Individual details
+      Individuals detail
     </h1>
 
     <div class="text">
       <p class="lede">
-        Use this tool to query HMRC. It will provide the income of a person using their National Insurance Number.
+        Use this tool to query HMRC. It will provide the income of people using their National Insurance Numbers.
       </p>
     </div>
 
@@ -44,41 +44,26 @@
     <!-- National Insurance number -->
     <div class="form-group {% if errors_on %}error{% endif %}">
       <label class="form-label-bold" for="ni-number" id="ni-number">
-        National Insurance number
+        National Insurance Numbers
         <span class="form-hint">
-          For example, 'VO 12 34 56 D'.
+          For example, 'VO 12 34 56 D'.<br />
+          You may add multiple numbers on a new line for additional applicants.
         </span>
        {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a national insurance number</span>{% endif %}
      </label>
-      <input type="text" class="form-control" name="nino" id="nino">
+      <textarea type="text" class="form-control" name="nino" id="nino" rows="5"></textarea>
     </div>
 
     <!-- From date -->
     <div class="form-group {% if errors_on %}error{% endif %}" id="from-date">
       <fieldset>
-        <legend class="form-label-bold">From date</legend>
-
-        <div class="form-date">
-
-          <p class="form-hint">For example, 31 3 1980</p>
-
-          {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a from date</span>{% endif %}
-
-          <div class="form-group form-group-day">
-            <label for="from_day">Day</label>
-            <input class="form-control" name="from_day" id="from_day" type="number" pattern="[0-9]*" min="0" max="31">
-          </div>
-
-          <div class="form-group form-group-month">
-            <label for="from_month">Month</label>
-            <input class="form-control" name="from_month" id="from_month" type="number" pattern="[0-9]*" min="0" max="12">
-          </div>
-
-          <div class="form-group form-group-year">
-            <label for="from_year">Year</label>
-            <input class="form-control" name="from_year" id="from_year" type="number" pattern="[0-9]*" min="0" max="2016">
-          </div>
-        </div>
+        <label class="form-label-bold" for="ni-number" id="ni-number">
+        Number of dependants
+        <span class="form-hint">
+          We'll use this to calulate the threshold.
+        </span>
+     </label>
+      <input type="text" class="form-control" name="nino" id="nino">
 
       </fieldset>
     </div>
@@ -86,13 +71,13 @@
     <!-- To date -->
     <div class="form-group {% if errors_on %}error{% endif %}" id="to-date">
       <fieldset>
-        <legend class="form-label-bold">To date</legend>
+        <legend class="form-label-bold">When was the application received?</legend>
 
         <div class="form-date">
 
           <p class="form-hint">For example, 31 3 1980</p>
 
-          {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a to date</span>{% endif %}
+          {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter an application date</span>{% endif %}
 
           <div class="form-group form-group-day">
             <label for="to_day">Day</label>
@@ -114,7 +99,7 @@
     </div>
 
     <div class="form-group">
-      <input type="submit" class="button" value="Check income">
+      <input type="submit" class="button" value="Check eligibility">
     </div>
 
   </form>

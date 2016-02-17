@@ -5,26 +5,44 @@ router.get('/', function (req, res) {
   res.render('index', {'global_header_text' : 'Home Office'});
 });
 
-//INCOME PROVING***************************
 
 // Example route: Passing data into a page
 router.get('/examples/template-data', function (req, res) {
   res.render('examples/template-data', { 'name' : 'Foo' });
 });
 
-router.get('/income', function (req, res) {
-  res.render('income/index', {'global_header_text' : 'Home Office', 'errors_on' : req.query.errors});
+//INCOME PROVING RELEASE 1***************************
+
+router.get('/income/1', function (req, res) {
+  res.render('income/1/index', {'global_header_text' : 'Home Office', 'errors_on' : req.query.errors});
 });
 
-router.get('/income/results', function(req, res, next) {
+router.get('/income/1/results', function(req, res, next) {
   var nino = req.query.nino;
   var fromDate = req.query.from_day+"/"+req.query.from_month+"/"+req.query.from_year;
   var toDate = req.query.to_day+"/"+req.query.to_month+"/"+req.query.to_year;
 
   if(nino){
-  	res.render('income/results', {'global_header_text' : 'Home Office', 'nino': nino, 'fromDate': fromDate, 'toDate': toDate});
+  	res.render('income/1/results', {'global_header_text' : 'Home Office', 'nino': nino, 'fromDate': fromDate, 'toDate': toDate});
   }
-  else res.redirect('/income?errors=on');
+  else res.redirect('/income/1?errors=on');
+});
+
+//INCOME PROVING RELEASE 1***************************
+
+router.get('/income/2', function (req, res) {
+  res.render('income/2/index', {'global_header_text' : 'Home Office', 'errors_on' : req.query.errors});
+});
+
+router.get('/income/2/results', function(req, res, next) {
+  var nino = req.query.nino;
+  var fromDate = req.query.from_day+"/"+req.query.from_month+"/"+req.query.from_year;
+  var toDate = req.query.to_day+"/"+req.query.to_month+"/"+req.query.to_year;
+
+  if(nino){
+    res.render('income/2/results', {'global_header_text' : 'Home Office', 'nino': nino, 'fromDate': fromDate, 'toDate': toDate});
+  }
+  else res.redirect('/income/2?errors=on');
 });
 
 // add your routes here
