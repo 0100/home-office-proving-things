@@ -57,14 +57,13 @@
     <!-- From date -->
     <div class="form-group {% if errors_on %}error{% endif %}" id="from-date">
       <fieldset>
-        <label class="form-label-bold" for="ni-number" id="ni-number">
+        <label class="form-label-bold" for="dependants" id="dependants">
         Number of dependants
-        <span class="form-hint">
-          We'll use this to calulate the threshold.
-        </span>
-     </label>
-      <input type="text" class="form-control" name="nino" id="nino">
-
+          <span class="form-hint">
+            We'll use this to calulate the threshold.
+          </span>
+        </label>
+      <input type="text" class="form-control" name="dependants" id="dependants">
       </fieldset>
     </div>
 
@@ -99,7 +98,7 @@
     </div>
 
     <div class="form-group">
-      <input type="submit" class="button" value="Check eligibility">
+      <p><input type="submit" class="button continue-button" value="Check eligibility"></p>
     </div>
 
   </form>

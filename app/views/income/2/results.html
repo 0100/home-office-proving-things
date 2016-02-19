@@ -10,117 +10,96 @@
   {% include "includes/phase_banner_alpha.html" %}
 
     <h1 class="form-title heading-large">
-      Individual income
+      Threshold check
     </h1>
+
+    <div class="govuk-box-highlight">
+      <h1 class="bold-large">Tom Jones meets the £24,800 threshold</h1>
+      <p>
+        between {{ fromDate|default('02/01/2015') }} and {{ toDate|default('02/01/2015') }} (6 months)
+      </p>
+    </div>
 
     <h2 class="heading-medium">
       Your search
     </h2>
 
-<table>
+    <table>
       <thead>
         <tr>
           <th scope="col">Individual</th>
           <th scope="col">National Insurance Number</th>
-          <th scope="col">From date</th>
-          <th scope="col">To date</th>
+          <th scope="col">Application date</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Tom Jones</td>
           <td>{{ nino|default('QQ 12 34 56 D') }}</td>
-          <td>{{ fromDate|default('02/01/2015') }}</td>
-          <td>{{ toDate|default('02/12/2015') }}</td>
+          <td>{{ toDate|default('02/01/2015') }}</td>
         </tr>
       </tbody>
     </table>
 
-    <h2 class="heading-medium">
-      Income details
-    </h2>
-
-   <table>
-    <thead>
-      <tr>
-        <th scope="col">Payment date</th>
-        <th scope="col">Employer</th>
-        <th class="numeric" scope="col">Gross income</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>02/01/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/02/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/03/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/04/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/05/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/06/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/07/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/08/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/09/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/10/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/11/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-      <tr>
-        <td>02/12/2015</td>
-        <td>Flying Pizza Ltd</td>
-        <td class="numeric">£1,666</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <th scope="col">Total</th>
-        <th scope="col"></th>
-        <th class="numeric" scope="col">£19,992</th>
-      </tr>
-    </tfoot>
-  </table>
+  <div class="grid-row">
+    <div class="column-half">
+      <h2 class="heading-medium">
+        Threshold requirements
+      </h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Applicant</th>
+            <th scope="col" class="numeric">Required threshold</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tom Jones</td>
+            <td class="numeric">£18,600</td>
+          </tr>
+          <tr>
+            <td>Dependant 1</td>
+            <td class="numeric">£3,800</td>
+          </tr>
+          <tr>
+            <td>Dependant 2</td>
+            <td class="numeric">£2,400</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="col">Total</th>
+            <th scope="col" class="numeric">£24,800</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="column-half">
+      <h2 class="heading-medium">
+        Employment history
+      </h2>
+      
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Employer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Flying Pizza Ltd</td>
+          </tr>
+          <tr>
+            <td>Dominos Pizza</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
     <div class="form-group">
-      <a class="button" href="/income/1/">Start a new search</a>
+      <p><a class="button continue-button" href="/income/2/">Start a new search</a></p>
     </div>
 
 </main>
