@@ -19,3 +19,8 @@
 .continue-button {
 	margin: 2rem 0;
 }
+
+.govuk-box-highlight.panel-fail {
+	background-color: $panel-colour;
+	color: #000;
+}
