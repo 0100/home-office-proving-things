@@ -42,7 +42,7 @@ router.get('/income/2/results', function(req, res, next) {
   var humanToDate = toDate.getDate()+"/"+toDate.getMonth()+"/"+toDate.getFullYear();
   var humanFromDate = fromDate.getDate()+"/"+fromDate.getMonth()+"/"+fromDate.getFullYear();
 
-  console.log(nino.length)
+  //console.log(nino.length)
 
   if(nino.length == 1 && nino == "QQ123456A"){
     res.render('income/2/results-fail', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
