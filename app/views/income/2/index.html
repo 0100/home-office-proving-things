@@ -12,12 +12,12 @@
   <form action="/income/2/results/" method="get" class="form">
 
     <h1 class="form-title heading-large">
-      Individuals details
+      Applicant details
     </h1>
 
     <div class="text">
       <p class="lede">
-        Use this tool to query HMRC. It will provide the income of people using their National Insurance Numbers.
+        You can check an applicant (without dependants) meets [requirement xx] threshold using a National Insurance Number.
       </p>
     </div>
 
@@ -44,27 +44,13 @@
     <!-- National Insurance number -->
     <div class="form-group {% if errors_on %}error{% endif %}">
       <label class="form-label-bold" for="ni-number" id="ni-number">
-        National Insurance Numbers
+        National Insurance Number
         <span class="form-hint">
-          For example, 'VO 12 34 56 D'.<br />
-          You may add multiple numbers on a new line for additional applicants.
+          For example, 'VO 12 34 56 D'.
         </span>
        {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a national insurance number</span>{% endif %}
      </label>
-      <textarea type="text" class="form-control" name="nino" id="nino" rows="5"></textarea>
-    </div>
-
-    <!-- From date -->
-    <div class="form-group {% if errors_on %}error{% endif %}" id="from-date">
-      <fieldset>
-        <label class="form-label-bold" for="dependants" id="dependants">
-        Number of dependants
-          <span class="form-hint">
-            We'll use this to calulate the threshold.
-          </span>
-        </label>
-      <input type="text" class="form-control" name="dependants" id="dependants">
-      </fieldset>
+      <input type="text" class="form-control" name="nino" id="nino" />
     </div>
 
     <!-- To date -->
