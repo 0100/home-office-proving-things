@@ -49,7 +49,8 @@ router.get('/income/2/results', function(req, res, next) {
     return true
   }
   else if(nino.length == 1 && nino == "QQ123456B"){
-    res.render('income/2/results-unsupported', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
+    //res.render('income/2/results-unsupported', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
+    res.render('income/2/results-fail', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
     return true
   }
   else if(nino.length == 1 && nino != "QQ123456A"){
