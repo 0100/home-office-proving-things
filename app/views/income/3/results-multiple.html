@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Home Office - Income Proving
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+
+  {% include "includes/breadcrumb_income_3.html" %}
+
+    <h1 class="form-title heading-large">
+      Threshold check
+    </h1>
+
+    <div class="govuk-box-highlight">
+      <h1 class="bold-large">Tom Jones and Michael George meet the £24,800 threshold</h1>
+      <p>
+        between {{ fromDate|default('02/01/2015') }} and {{ toDate|default('02/01/2015') }} (6 months)
+      </p>
+    </div>
+
+    <h2 class="heading-medium">
+      Your search
+    </h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Applicant</th>
+          <th scope="col">National Insurance Number</th>
+          <th scope="col">Application date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tom Jones</td>
+          <td>QQ 12 34 56 D</td>
+          <td>{{ toDate|default('02/01/2015') }}</td>
+        </tr>
+        <tr>
+          <td>Michael George</td>
+          <td>QQ 12 34 56 D</td>
+          <td>{{ toDate|default('02/01/2015') }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="form-group">
+      <p><a class="button continue-button" href="/income/3/">Start a new search</a></p>
+    </div>
+
+</main>
+{% endblock %}
