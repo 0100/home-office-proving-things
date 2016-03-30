@@ -10,11 +10,18 @@
   {% include "includes/phase_banner_alpha.html" %}
 
   {% include "includes/breadcrumb_income_2.html" %}
-
+  
     <h1 class="form-title heading-large">
-      Tom Jones doesn't meet the Category A financial requirement
+      Threshold check
     </h1>
-    <p class="lede">We can only currently check applications which fall within &lsquo;Category A: With current employer for 6 months or more&rsquo;.</p>
+    <p class="lede">Does the applicant meet [regulation] threshold of £18,600?</p>
+
+    <div class="govuk-box-highlight panel-fail">
+      <h1 class="bold-large">No, Tom Jones earns £17,345.50</h1>
+      <p>
+        between {{ fromDate|default('02/01/2015') }} and {{ toDate|default('02/01/2015') }} (6 months)
+      </p>
+    </div>
 
     <h2 class="heading-medium">
       Your search

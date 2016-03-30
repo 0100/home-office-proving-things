@@ -64,6 +64,46 @@ router.get('/income/2/results', function(req, res, next) {
   else res.redirect('/income/2?errors=on');
 });
 
+//INCOME PROVING RELEASE 1***************************
+
+router.get('/income/3', function (req, res) {
+  res.render('income/3/index', {'global_header_text' : 'Home Office', 'errors_on' : req.query.errors});
+});
+
+router.get('/income/3/results', function(req, res, next) {
+  var nino = req.query.nino.split(/\r?\n/);
+  var toDate = new Date(req.query.to_year, req.query.to_month, req.query.to_day);;
+  var fromDate = new Date(req.query.to_year, (req.query.to_month)-6, req.query.to_day);;
+
+  var humanToDate = toDate.getDate()+"/"+toDate.getMonth()+"/"+toDate.getFullYear();
+  var humanFromDate = fromDate.getDate()+"/"+fromDate.getMonth()+"/"+fromDate.getFullYear();
+
+  //console.log(nino.length)
+
+  if(nino.length == 1 && nino == "QQ123456A"){
+    res.render('income/3/results-fail', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
+    return true
+  }
+  else if(nino.length == 1 && nino == "QQ123456B"){
+    //res.render('income/3/results-unsupported', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
+    res.render('income/3/results-false-nino', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
+    return true
+  }
+  else if(nino.length == 1 && nino == "ERROR"){
+    res.redirect('/income/3?errors=on');
+    return true
+  }
+  else if(nino.length == 1 && nino != "QQ123456A"){
+    res.render('income/3/results-success', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
+    return true
+  }
+  if(nino.length > 1){
+    res.render('income/3/results-multiple', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
+    return true
+  }
+  else res.redirect('/income/3?errors=on');
+});
+
 // add your routes here
 
 //RESIDENCY *********************************
