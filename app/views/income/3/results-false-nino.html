@@ -12,7 +12,7 @@
   {% include "includes/breadcrumb_income_3.html" %}
 
     <h1 class="form-title heading-large">
-      There is no income record for {{ nino|default('QQ 12 34 56 D') }}
+      There is no record for {{ nino|default('QQ 12 34 56 D') }}
     </h1>
 
     <p class="lede">We couldn't perform the financial requirement check as no income information exists with HMRC for the National Insurance Number {{ nino|default('QQ 12 34 56 D') }}.</p>
