@@ -71,14 +71,23 @@ router.get('/income/3', function (req, res) {
 });
 
 router.get('/income/3/results', function(req, res, next) {
+  
+  if(!nino){
+    res.redirect('/income/3?errors=nino');
+    return true
+  }
+  if(!req.query.to_year && !req.query.to_month && !req.query.to_day){
+    res.redirect('/income/3?errors=date');
+    return true
+  }
+
   var nino = req.query.nino.split(/\r?\n/);
+
   var toDate = new Date(req.query.to_year, req.query.to_month, req.query.to_day);;
   var fromDate = new Date(req.query.to_year, (req.query.to_month)-6, req.query.to_day);;
 
   var humanToDate = toDate.getDate()+"/"+toDate.getMonth()+"/"+toDate.getFullYear();
   var humanFromDate = fromDate.getDate()+"/"+fromDate.getMonth()+"/"+fromDate.getFullYear();
-
-  //console.log(nino.length)
 
   if(nino.length == 1 && nino == "QQ123456A"){
     res.render('income/3/results-fail', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
