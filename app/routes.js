@@ -81,32 +81,28 @@ router.get('/income/3/results', function(req, res, next) {
     return true
   }
 
-  var nino = req.query.nino.split(/\r?\n/);
+  var nino = req.query.nino;
   var toDate = new Date(req.query.to_year, req.query.to_month, req.query.to_day);;
   var fromDate = new Date(req.query.to_year, (req.query.to_month)-6, req.query.to_day);;
 
   var humanToDate = toDate.getDate()+"/"+toDate.getMonth()+"/"+toDate.getFullYear();
   var humanFromDate = fromDate.getDate()+"/"+fromDate.getMonth()+"/"+fromDate.getFullYear();
 
-  if(nino.length == 1 && nino == "QQ123456A"){
+  if(nino.toLowerCase() == "qq123456a"){
     res.render('income/3/results-fail', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
     return true
   }
-  else if(nino.length == 1 && nino == "QQ123456B"){
+  else if(nino.toLowerCase() == "qq123456b"){
     //res.render('income/3/results-unsupported', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
     res.render('income/3/results-false-nino', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
     return true
   }
-  else if(nino.length == 1 && nino == "ERROR"){
+  else if(nino.toLowerCase() == "error"){
     res.redirect('/income/3?errors=on');
     return true
   }
-  else if(nino.length == 1 && nino != "QQ123456A"){
+  else if(nino.toLowerCase() != "qq123456a"){
     res.render('income/3/results-success', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
-    return true
-  }
-  if(nino.length > 1){
-    res.render('income/3/results-multiple', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
     return true
   }
   else res.redirect('/income/3?errors=on');

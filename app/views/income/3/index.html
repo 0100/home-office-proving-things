@@ -55,7 +55,7 @@ person residing in the UK&rsquo; using a National Insurance Number.
         </span>
        {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a national insurance number</span>{% endif %}
      </label>
-      <input type="text" class="form-control" name="nino" id="nino" />
+      <input type="text" class="form-control" name="nino" id="nino" autocomplete="off" />
     </div>
 
     <!-- To date -->
@@ -71,17 +71,17 @@ person residing in the UK&rsquo; using a National Insurance Number.
 
           <div class="form-group form-group-day">
             <label for="to_day">Day</label>
-            <input class="form-control" name="to_day" id="to_day" type="number" pattern="[0-9]*" min="0" max="31">
+            <input class="form-control" name="to_day" id="to_day" type="number" pattern="[0-9]*" min="0" max="31" autocomplete="off">
           </div>
 
           <div class="form-group form-group-month">
             <label for="to_month">Month</label>
-            <input class="form-control" name="to_month" id="to_month" type="number" pattern="[0-9]*" min="0" max="12">
+            <input class="form-control" name="to_month" id="to_month" type="number" pattern="[0-9]*" min="0" max="12" autocomplete="off">
           </div>
 
           <div class="form-group form-group-year">
             <label for="to_year">Year</label>
-            <input class="form-control" name="to_year" id="to_year" type="number" pattern="[0-9]*" min="0" max="2016">
+            <input class="form-control" name="to_year" id="to_year" type="number" pattern="[0-9]*" min="0" max="2016" autocomplete="off">
           </div>
         </div>
 
