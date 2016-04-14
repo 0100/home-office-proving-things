@@ -13,6 +13,10 @@ router.get('/examples/template-data', function (req, res) {
 
 //INCOME PROVING RELEASE 1***************************
 
+router.get('/income', function (req, res) {
+  res.render('income/index', {'global_header_text' : 'Home Office'});
+});
+
 router.get('/income/1', function (req, res) {
   res.render('income/1/index', {'global_header_text' : 'Home Office', 'errors_on' : req.query.errors});
 });
