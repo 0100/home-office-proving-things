@@ -112,6 +112,62 @@ router.get('/income/3/results', function(req, res, next) {
   else res.redirect('/income/3?errors=on');
 });
 
+
+
+
+
+//INCOME PROVING RELEASE 4***************************
+
+router.get('/income/4', function (req, res) {
+  res.render('income/4/index', {'global_header_text' : 'Home Office', 'errors_on' : req.query.errors});
+});
+
+router.get('/income/4/results', function(req, res, next) {
+  
+  if(!req.query.nino){
+    res.redirect('/income/4?errors=nino');
+    return true
+  }
+  if(!req.query.to_year || !req.query.to_month || !req.query.to_day){
+    res.redirect('/income/4?errors=date');
+    return true
+  }
+
+  var nino = req.query.nino;
+  var toDate = new Date(req.query.to_year, req.query.to_month, req.query.to_day);;
+  var fromDate = new Date(req.query.to_year, (req.query.to_month)-6, req.query.to_day);;
+
+  var humanToDate = toDate.getDate()+"/"+toDate.getMonth()+"/"+toDate.getFullYear();
+  var humanFromDate = fromDate.getDate()+"/"+fromDate.getMonth()+"/"+fromDate.getFullYear();
+
+  var dependants = req.query.dependants;
+
+
+  if(nino.toLowerCase() == "qq123456a"){
+    res.render('income/4/results-fail', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate, 'dependants': dependants});
+    return true
+  }
+  else if(nino.toLowerCase() == "qq123456b"){
+    //res.render('income/4/results-unsupported', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
+    res.render('income/4/results-false-nino', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate, 'dependants': dependants});
+    return true
+  }
+  else if(nino.toLowerCase() == "error"){
+    res.redirect('/income/4?errors=on');
+    return true
+  }
+  else if(nino.toLowerCase() != "qq123456a"){
+    res.render('income/4/results-success', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate, 'dependants': dependants});
+    return true
+  }
+  else res.redirect('/income/4?errors=on');
+});
+
+
+
+
+
+
 // add your routes here
 
 //RESIDENCY *********************************
