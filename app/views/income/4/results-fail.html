@@ -12,62 +12,37 @@
   {% include "includes/breadcrumb_income_3.html" %}
 
     <h1 class="form-title heading-large">
-      Tom Jones doesn't meet the Category A requirement 
+      Tom Jones doesn't meet the the Category A Salaried requirement
     </h1>
 
-    <p>This was checked using the financial requirement &lsquo;Category A: With current employer for 6 months or more –
-person residing in the UK&rsquo;.</p>
     <p>They don't meet the financial requirement because:</p>
     <ul class="list list-bullet">
       <li>they haven't been with their current employer for 6 months.</li>
       <li>they haven't met the required monthly amount.</li>
     </ul>
 
-    <div class="grid-row">
+    <h2 class="heading-medium">
+      Your check
+    </h2>
 
-      <div class="column-half">
-          <h2 class="heading-medium">
-            Individual
-          </h2>
-        <table>
-          <tbody>
-            <tr>
-              <th scope="col">Name</th>
-              <td>Tom Jones</td>
-            </tr>
-            <tr>
-              <th scope="col">Employer</th>
-              <td>Flying Pizza Ltd</td>
-            </tr>
-         </tbody>
-        </table>
-      </div>
-
-      <div class="column-half">
-        <h2 class="heading-medium">
-          Your search
-        </h2>
-        <table>
-          <tbody>
-            <tr>
-               <th scope="col">National Insurance Number</th>         
-               <td>{{ nino|default('QQ 12 34 56 D') }}</td>
-            </tr>
-            {% if dependants > 0 %}
-            <tr>
-              <th scope="col">Dependants</th>
-              <td>{{dependants}}</td>
-            </tr>
-            {% endif %}
-            <tr>
-               <th scope="col">Application date</th>
-               <td>{{ toDate|default('02/01/2015') }}</td>
-            </tr>
-         </tbody>
-        </table>
-      </div>
-
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Applicant</th>
+          {% if dependants > 0 %}<th scope="col">Dependants</th>{% endif %}
+          <th scope="col">National Insurance Number</th>
+          <th scope="col">Application raised</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tom Jones</td>
+          {% if dependants > 0 %}<td>{{dependants}}</td>{% endif %}
+          <td>{{ nino|default('QQ 12 34 56 D') }}</td>
+          <td>{{ toDate|default('02/01/2015') }}</td>
+        </tr>
+      </tbody>
+    </table>
 
     <div class="form-group">
       <p><a class="button continue-button" href="/income/4/">Start a new check</a></p>
