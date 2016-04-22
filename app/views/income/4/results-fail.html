@@ -23,23 +23,35 @@ person residing in the UK&rsquo;.</p>
       <li>they haven't met the required monthly amount.</li>
     </ul>
 
-
-    <h2 class="heading-medium">
-      Your check
-    </h2>
-
     <div class="grid-row">
 
       <div class="column-half">
-      hello
-      </div>
-
-      <div class="column-half">
+          <h2 class="heading-medium">
+            Individual
+          </h2>
         <table>
           <tbody>
             <tr>
-              <th scope="col">Applicant</th>
+              <th scope="col">Name</th>
               <td>Tom Jones</td>
+            </tr>
+            <tr>
+              <th scope="col">Employer</th>
+              <td>Flying Pizza Ltd</td>
+            </tr>
+         </tbody>
+        </table>
+      </div>
+
+      <div class="column-half">
+        <h2 class="heading-medium">
+          Your search
+        </h2>
+        <table>
+          <tbody>
+            <tr>
+               <th scope="col">National Insurance Number</th>         
+               <td>{{ nino|default('QQ 12 34 56 D') }}</td>
             </tr>
             {% if dependants > 0 %}
             <tr>
@@ -47,10 +59,6 @@ person residing in the UK&rsquo;.</p>
               <td>{{dependants}}</td>
             </tr>
             {% endif %}
-            <tr>
-               <th scope="col">National Insurance Number</th>         
-               <td>{{ nino|default('QQ 12 34 56 D') }}</td>
-            </tr>
             <tr>
                <th scope="col">Application date</th>
                <td>{{ toDate|default('02/01/2015') }}</td>
