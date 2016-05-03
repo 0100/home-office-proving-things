@@ -22,7 +22,7 @@
 
     <div class="text">
       <p class="lede">
-        You can check an individual meets the Category A Salaried requirement using a National Insurance Number.
+        You can check an individual meets &lsquo;Category A: With current employer for 6 months or more – person residing in the UK&rsquo; using a National Insurance Number.
       </p>
     </div>
 
@@ -39,7 +39,7 @@
 
     <ul class="error-summary-list">
       <li><a href="#ni-number">National Insurance Number is missing</a></li>
-      <li><a href="#to-date">Application received date is missing</a></li>
+      <li><a href="#to-date">Application raised is missing</a></li>
     </ul>
 
   </div>
@@ -52,7 +52,7 @@
         <span class="form-hint">
           For example, 'VO 12 34 56 D'.
         </span>
-       {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a national insurance number</span>{% endif %}
+       {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter a National Insurance Number</span>{% endif %}
      </label>
       <input type="text" class="form-control" name="nino" id="nino" autocomplete="off" />
     </div>
@@ -70,13 +70,13 @@
     <!-- To date -->
     <div class="form-group {% if errors_on %}error{% endif %}" id="to-date">
       <fieldset>
-        <legend class="form-label-bold">When was the application received?</legend>
+        <legend class="form-label-bold">When was the application raised?</legend>
 
         <div class="form-date">
 
           <p class="form-hint">For example, 31 3 1980</p>
 
-          {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter an application received date</span>{% endif %}
+          {% if errors_on %}<span class="error-message" id="error-message-full-name">Please enter an application raised date</span>{% endif %}
 
           <div class="form-group form-group-day">
             <label for="to_day">Day</label>
