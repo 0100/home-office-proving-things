@@ -168,6 +168,60 @@ router.get('/income/4/results', function(req, res, next) {
 
 
 
+
+//INCOME PROVING RELEASE 5***************************
+
+
+
+router.get('/income/5', function (req, res) {
+  res.render('income/5/index', {'global_header_text' : 'Home Office', 'errors_on' : req.query.errors});
+});
+
+router.get('/income/5/results', function(req, res, next) {
+  
+  if(!req.query.nino){
+    res.redirect('/income/5?errors=nino');
+    return true
+  }
+  if(!req.query.to_year || !req.query.to_month || !req.query.to_day){
+    res.redirect('/income/5?errors=date');
+    return true
+  }
+
+  var nino = req.query.nino;
+  var toDate = new Date(req.query.to_year, req.query.to_month, req.query.to_day);;
+  var fromDate = new Date(req.query.to_year, (req.query.to_month)-6, req.query.to_day);;
+
+  var humanToDate = toDate.getDate()+"/"+toDate.getMonth()+"/"+toDate.getFullYear();
+  var humanFromDate = fromDate.getDate()+"/"+fromDate.getMonth()+"/"+fromDate.getFullYear();
+
+  var dependants = req.query.dependants;
+
+
+  if(nino.toLowerCase() == "qq123456a"){
+    res.render('income/5/results-fail', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate, 'dependants': dependants});
+    return true
+  }
+  else if(nino.toLowerCase() == "qq123456b"){
+    //res.render('income/5/results-unsupported', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate});
+    res.render('income/5/results-false-nino', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate, 'dependants': dependants});
+    return true
+  }
+  else if(nino.toLowerCase() == "error"){
+    res.redirect('/income/5?errors=on');
+    return true
+  }
+  else if(nino.toLowerCase() != "qq123456a"){
+    res.render('income/5/results-success', {'global_header_text' : 'Home Office', 'nino': nino, 'toDate': humanToDate, 'fromDate': humanFromDate, 'dependants': dependants});
+    return true
+  }
+  else res.redirect('/income/4?errors=on');
+});
+
+
+
+
+
 // add your routes here
 
 //RESIDENCY *********************************
