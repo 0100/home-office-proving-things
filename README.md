@@ -1,16 +1,11 @@
-# GOV.UK Prototype kit
+# Home Office Proving Things Prototype
+## Using the GOV.UK Prototype kit
 
-The kit provides a simple way to make interactive prototypes that look like pages on GOV.UK. These prototypes can be used to show ideas to people you work with, and to do user research.
+For more information about the gov.uk prototyping kit visit [https://github.com/alphagov/govuk_prototype_kit]
 
-It's built on the [Express](http://expressjs.com/) framework, and uses these GOV.UK resources:
+You can find the prototypes live on [Heroku](http://home-office-proving-things.herokuapp.com/)
 
-- [GOV.UK template](https://github.com/alphagov/govuk_template)
-- [GOV.UK front end toolkit](https://github.com/alphagov/govuk_frontend_toolkit)
-- [GOV.UK elements](https://github.com/alphagov/govuk_elements)
-
-Read the [project principles](docs/principles.md).
-
-## Requirements
+## Requirements to run the prototype
 
 #### [Node](http://nodejs.org/)
 
