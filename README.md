@@ -1,9 +1,14 @@
 # Home Office Proving Things Prototype
+
+These prototypes have been designed by the Sheffield Hub for some transactions the Proving Things team are looking into providing for some Home Office Services.
+
+We version our prototypes using git tags with a mixture of duplicating the code into a new version folder. This gives the team a good insight into the changes being made by design. We can also track user research findings then with a version of the prototype.
+
+You can find the prototypes live on [Heroku](http://home-office-proving-things.herokuapp.com/)
+
 ## Using the GOV.UK Prototype kit
 
 For more information about the gov.uk prototyping kit visit [https://github.com/alphagov/govuk_prototype_kit]
-
-You can find the prototypes live on [Heroku](http://home-office-proving-things.herokuapp.com/)
 
 ## Requirements to run the prototype
 
